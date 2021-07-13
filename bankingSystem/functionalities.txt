@@ -1,0 +1,16 @@
+class user{
+Name (string)
+Age(integer)
+Gender(male/female)
+Phone no(interger)
+Address(string)
+Current amount(double)
+Transaction history(list with transaction id and amount)
+}
+
+
+Functionality:-
+Withdraw money:-check whether the account have the money or not
+Deposit money:-get the account number and add the money to the current amount
+Transfer money :-validate both the account no and then deduct the money from the user account and add the same amount to the other account
+Transaction history:-fetch all the transaction history from the user and print it in the reverse order;

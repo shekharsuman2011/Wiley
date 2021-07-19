@@ -2,49 +2,62 @@ package com.July12;
 
 import java.util.*;
 
-public class Fibonachi extends Thread {
-	 private int x;
-	    public int answer;
-	 
-	    public Fibonachi(int x) {
-	        this.x = x;
-	    }
-	 
-	    public void run() {
-	        if (x == 0){ 
-	            answer = 0;
-	        }else if( x == 1 || x == 2 ) {
-	            answer = 1;
-	        }else {
-	            try {
-	                /*
-	                 * Below we are invoking 2 threads to compute separate values
-	                 * This will for a tree structure
-	                 */
-	            	Fibonachi f1 = new Fibonachi(x-1);
-	            	Fibonachi f2 = new Fibonachi(x-2);
-	                f1.start();
-	                f2.start();
-	                f1.join();
-	                f2.join();
-	                answer = f1.answer + f2.answer;
-	            }catch(InterruptedException ex) { 
-	                ex.printStackTrace();
-	            }
+class fibo implements Runnable
+{
+	List<Integer> fibolist=new ArrayList<Integer>();
+	@Override
+	public void run() {
+		int n1=0,n2=1,n3,i,count=100;  
+		for(i=2;i<count;++i)   
+		 {    
+		  n3=n1+n2;    
+		  fibolist.add(n3);  
+		  n1=n2;    
+		  n2=n3;    
+		 }    
+		
+	}
+	
+}
+class fibotable implements Runnable
+{
+	List<String> ftable=new ArrayList<String>();
+	@Override
+	public void run() {
+		int prev=0,next=1,sum=0;
+	       int temp;
+	        for(int i=0;i<100;i++)
+	        {
+		        	temp=next;
+		        	next=prev+next;
+		        	prev=temp;
+		        	
+		        	ftable.add(sum+" + "+prev+" = "+(sum+prev));
+		        	System.out.println(ftable.get(0));
+		        	sum=sum+prev;
 	        }
-	    }
+		
+	}
+	
+}
+
+public class Fibonachi {
+	
 	public static void main(String args[])
 	{
-		try {
-            int inputNum = 8;
-            Fibonachi f = new Fibonachi(inputNum);
-            f.start();
-            f.join();
-            System.out.println("Fibonacci number at "+inputNum+" position is:"+f.answer);
-        }
-        catch(Exception e) {
-            e.printStackTrace();
-        }
+		fibo f=new fibo();
+		Thread t=new Thread(f);
+		fibotable f2=new fibotable();
+		Thread t2=new Thread(f2);
+		t.start();
+		t2.start();
+		System.out.println(f.fibolist);
+		System.out.println(f2.ftable);
+		for(String li:f2.ftable)
+		{
+			System.out.println(li);
+		}
+		
 	}
 
 }

@@ -56,43 +56,14 @@ public class ListWithThread {
 		ulist.get(1).addProject(1,"project1");
 		ulist.get(1).addProject(2,"project2");
 		
-//		for(User li:ulist)
-//		{	
-//			System.out.println(li);
-//			for(Project p:li.project)
-//			{
-//				System.out.println(p);
-//			}
-//		}
-		
-//		 LinkedHashMap<User, List<Project>>
-//         map = ulist.stream()
-//                   .collect(
-//                       Collectors
-//                           .toMap(
-//                               User
-//                               Student::getName,
-//                               (x, y)
-//                                   -> x + ", " + y,
-//                               LinkedHashMap::new));
+
 		 Map<User,List<Project>> map = new HashMap<>();
-		  
-	        // put every value list to Map
 	        for (User stu : ulist) {
+	        	if()
 	            map.put(stu, stu.project);
 	        }
 	        
 	        System.out.println(map);
-	       int prev=0,next=1,sum=0;
-	       int temp;
-	        for(int i=0;i<10;i++)
-	        {
-		        	temp=next;
-		        	next=prev+next;
-		        	prev=temp;
-		        	System.out.println(sum+" + "+prev+" = "+(sum+prev));
-		        	sum=sum+prev;
-	        }
 	}
 
 }

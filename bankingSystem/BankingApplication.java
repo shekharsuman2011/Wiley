@@ -92,6 +92,45 @@ class Functionality
 		}
 	}
 }
+class note
+{
+	int value;
+	int quantity;
+	note(int value,int quantity)
+	{
+		this.value=value;
+		this.quantity=quantity;
+	}
+}
+class ATM
+{
+	note fifty;
+	note ten;
+	note five;
+	int totalValue;
+	ATM(int fifty,int ten,int five)
+	{
+		this.fifty=new note(50,fifty);
+		this.ten=new note(10,ten);
+		this.five=new note(5,five);
+		totalValue=50*fifty+10*ten+five*5;
+	}
+	public void notedispersion(int amount,User user)
+	{
+		if(amount>totalValue || user.CurrentAmount<amount)
+		{
+			System.out.println("Insufficent balance");
+		}
+		else
+		{
+			
+			totalValue=totalValue-amount;
+	
+			
+		}
+	}
+	
+}
 public class BankingApplication {
 
 	public static void main(String[] args) {
@@ -107,3 +146,5 @@ public class BankingApplication {
 	}
 
 }
+
+

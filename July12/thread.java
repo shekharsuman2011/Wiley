@@ -126,7 +126,7 @@ public class thread {
 		           
 //		        }
 		            System.out.println(Thread.currentThread().getName() + " ---- "+i);
-		        }x
+		        }
 		    }
 
 		    public Set<Integer> getIntegers() {

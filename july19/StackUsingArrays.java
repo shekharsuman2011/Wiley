@@ -38,6 +38,10 @@ class Stack
 			System.out.println(arr[i]);
 		}
 	}
+	public void peek()
+	{
+		System.out.println("top most element is "+arr[index]);
+	}
 	
 }
 
@@ -53,6 +57,7 @@ public class StackUsingArrays {
 		s.push(10);
 		s.push(20);
 		s.push(30);
+		s.peek();
 		s.push(40);
 		s.push(50);
 		s.triverse();

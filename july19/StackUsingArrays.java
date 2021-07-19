@@ -33,10 +33,12 @@ class Stack
 	}
 	public void triverse()
 	{
+		System.out.println("=============================================================");
 		for(int i=0;i<=index;i++)
 		{
 			System.out.println(arr[i]);
 		}
+		System.out.println("=============================================================");
 	}
 	public void peek()
 	{
@@ -53,7 +55,6 @@ public class StackUsingArrays {
 		
 		Stack s=new Stack();
 		s.triverse();
-		System.out.println("=============================================================");
 		s.push(10);
 		s.push(20);
 		s.push(30);
@@ -62,7 +63,6 @@ public class StackUsingArrays {
 		s.push(50);
 		s.triverse();
 		s.pop();
-		System.out.println("=============================================================");
 		s.triverse();
 		s.pop();
 		s.pop();
@@ -70,7 +70,6 @@ public class StackUsingArrays {
 		s.pop();
 		s.pop();
 		s.pop();
-		System.out.println("=============================================================");
 		s.triverse();
 		
 		

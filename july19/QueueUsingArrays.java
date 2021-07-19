@@ -31,10 +31,12 @@ class Queue
 	}
 	void display()
 	{
+		System.out.println("=============================================================");
 		for(int i=front;i<rear;i++)
 		{
 			System.out.println(arr[i]);
 		}
+		System.out.println("=============================================================");
 	}
 }
 
@@ -46,17 +48,13 @@ public class QueueUsingArrays {
 		q.enqueue(10);
 		q.enqueue(20);
 		q.enqueue(30);
-		System.out.println("=============================================================");
 		q.display();
-		System.out.println("=============================================================");
 		q.dequeue();
 		q.dequeue();
 		q.dequeue();
 		q.dequeue();
 		q.enqueue(50);
-		System.out.println("=============================================================");
 		q.display();
-		System.out.println("=============================================================");
 		q.dequeue();
 		q.dequeue();
 		
